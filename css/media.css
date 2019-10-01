@@ -1,0 +1,22 @@
+@media (max-width: 1370px) {
+    .head_title  {
+         margin: 50px 0 0 90px;
+    }
+    
+    .main {
+        margin: 40px 0 0  90px;
+    }
+    
+    .main_button {
+        margin: 70px 0 0 20px;
+    }
+    
+    .main__wrapper::before {
+        top: 220px;
+    }
+    
+    .main__wrapper::after {
+        top: 240px;
+    }
+    
+}

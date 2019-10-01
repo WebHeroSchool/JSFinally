@@ -1,9 +1,11 @@
 html {
-    overflow-x: hidden;
+    overflow: hidden;
 }
+
 {margin: 0; padding: 0}
 
 body {
+    height: 100%;
     margin: 0;
     
     background: #28704F url(../image/Background.png);
@@ -40,6 +42,17 @@ body {
     line-height: 22px;
 }
 
+.main__wrapper::before {
+    content: "";
+    background-image: url(../image/cards1.png);
+    position: absolute;
+    top: 430px;
+    right: 338px;
+    width: 288px;
+    height: 383px;
+    border-radius: 9px;
+}
+
 .main {
     margin: 60px 0 0 152px;
     
@@ -61,11 +74,11 @@ body {
     list-style: none;
 }
 
-.main_menu__item:first-child {
+.main_menu__item-onClick {
     list-style-image: url(../image/Rectangle%202.svg);
 }
 
-.main_menu__item:hover {
+.main_menu__item-mouseOver {
     list-style-image: url(../image/Rectangle%202.svg);
     
     opacity: 0.8;
@@ -89,19 +102,15 @@ body {
     border: 0;
 }
 
-.main_image {
+.main__wrapper::after {
+    content: "";
+    background-image: url(../image/cards2.png);
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 450px;
+    right: 158px;
+    width: 393px;
+    height: 411px;
+    z-index: 1;
+    border-radius: 9px;    
 }
 
-.main_image__cards-up {
-    transform: rotate(11deg);
-}
-
-.main_image__cards-down {
-    position: relative;
-    right: 130px;
-    top: 20px;
-    transform: rotate(10deg);
-}
