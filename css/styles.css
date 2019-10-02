@@ -55,15 +55,18 @@ body {
 
 .main {
     margin: 60px 0 0 152px;
-    
-    font-family: 
     display: flex;
-    
     flex-direction: column;
 }
 
+.main_menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .main_menu__item {
-    margin: 24px;
+    margin: 4px;
     color: white;
     
     font-style: normal;
@@ -71,14 +74,35 @@ body {
     font-size: 50px;
     line-height: 59px;
     
-    list-style: none;
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+
+    cursor: pointer;
+
 }
 
-.main_menu__item-onClick {
-    list-style-image: url(../image/Rectangle%202.svg);
+.checked {
+    opacity: 0.8;
+
 }
 
-.main_menu__item-mouseOver {
+
+.checked::before {
+    content: '';
+    background-color: #D62B2E;
+    position: absolute;
+    left: -15px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+}
+
+
+
+
+.main_menu__item:hover{
     list-style-image: url(../image/Rectangle%202.svg);
     
     opacity: 0.8;
