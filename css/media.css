@@ -20,3 +20,28 @@
     }
     
 }
+
+@media (max-width: 1160px) {
+    .main__wrapper::after {
+        display: none;
+    }
+    .main__wrapper::before {
+        display: none;
+    }
+}
+
+@media (max-width: 925px) {
+    .head_title {
+        font-size: 50px;
+    }
+    .head_desk {
+    margin: 6px 0 0 94px;
+    }
+
+    .main_button {
+    margin: 70px 0 0 0px;
+    width: 320px;
+    height: 95px;
+    }
+}
+

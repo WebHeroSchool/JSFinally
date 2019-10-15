@@ -54,12 +54,12 @@ body {
 }
 
 .main {
-    margin: 60px 0 0 152px;
     display: flex;
     flex-direction: column;
 }
 
 .main_menu {
+    margin: 0 0 0 30px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -68,7 +68,7 @@ body {
 .main_menu__item {
     margin: 4px;
     color: white;
-    
+    width: 150px;
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
@@ -79,34 +79,25 @@ body {
     text-align: left;
 
     cursor: pointer;
-
 }
 
-.checked {
+.checked, .main_menu__item:hover{
     opacity: 0.8;
-
+    cursor: pointer;
+    position: relative;
 }
-
 
 .checked::before {
     content: '';
     background-color: #D62B2E;
     position: absolute;
-    left: -15px;
-    top: 24px;
+    top: 20px;
+    left: -23px;
     width: 18px;
     height: 18px;
     transform: rotate(45deg);
 }
 
-
-
-
-.main_menu__item:hover{
-    list-style-image: url(../image/Rectangle%202.svg);
-    
-    opacity: 0.8;
-}
 
 .main_button {
     margin: 112px 0 0 0px;
@@ -124,6 +115,11 @@ body {
     line-height: 37px;
     
     border: 0;
+    cursor: pointer;
+}
+
+.main_button:hover{
+    background-color: #A53029;
 }
 
 .main__wrapper::after {
@@ -138,3 +134,80 @@ body {
     border-radius: 9px;    
 }
 
+.display-none {
+    display: none;
+}
+
+.card__container {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    height: 341px;
+    width: 218px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.container__three-card {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 341px;
+    width: 702px;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.container__six-card {
+display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ height: 706px;
+ width: 702px;
+ margin: auto;
+ perspective: 1000px;
+}
+
+.contsiner__ten-card {
+display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ height: 706px;
+ width: 1186px;
+ margin: auto;
+ perspective: 1000px;
+}
+
+
+.card__container_hover:hover {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transform: rotate(-3.08deg) translateY(-15px);
+    transition: .4s ease;
+}
+
+.card__backside {
+    background: url(../image/card3.png) no-repeat;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.winner__card {
+    background: url(../image/card_with_bag.png);
+    backface-visibility: hidden;
+    height: 341px;
+    width: 218px;
+    position:absolute;
+    transform: rotateY(180deg);
+   
+}
+
+.looser__card {
+    background: url(../image/card_finally.png);
+    backface-visibility: hidden;
+    height: 341px;
+    width: 218px;
+    position:absolute;
+    /* transform: rotateY(180deg); */
+}
