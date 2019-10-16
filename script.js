@@ -31,15 +31,15 @@ for (let i = 0; i < buttonLevel.length; i++) {
 function getNumberOfCard() {
   if (buttonSimple.classList.contains("checked")) {
     playWrapper.className = config.classForThreeCards;
-    card = 3;
+    return 3;
   }
   else if (buttonMiddle.classList.contains("checked")) {
     playWrapper.className = config.classForSixCards;
-    card = 6;
+    return 6;
   }
   else if (buttonHard.classList.contains("checked")) {
     playWrapper.className = config.classForTenCards;
-    card = 10;
+    return 10;
   };
 }
 getNumberOfCard();
