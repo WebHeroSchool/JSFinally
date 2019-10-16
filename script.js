@@ -1,7 +1,7 @@
 console.log('hello');
 const startWrapper = document.getElementById('container')
 const playWrapper = document.getElementById('divGame');
-const card = document.createElement('div');
+
 const menuLevel = document.getElementById('containerFromLevel');
 const buttonLevel = document.querySelectorAll('.main_menu__item');
 const buttonStart = document.getElementById('button__startTheGame');
@@ -51,6 +51,7 @@ getNumberOfCard();
 function creatureCards(number) {
 let randomCard = Math.floor(Math.random() * number);
 for (let i = 0; i < number; i++ ) {
+let card = document.createElement('div');
 card.className = config.classNameForAllCards;
 document.body.append(playWrapper);
 playWrapper.append(card);
