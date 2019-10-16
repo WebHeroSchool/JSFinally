@@ -134,6 +134,8 @@ body {
     border-radius: 9px;    
 }
 
+/*Стили, которые добавляются через скрипт*/
+
 .display-none {
     display: none;
 }
@@ -149,6 +151,8 @@ body {
 }
 
 .container__three-card {
+    background: none;
+
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -159,7 +163,7 @@ body {
 }
 
 .container__six-card {
-display: flex;
+ display: flex;
  justify-content: space-between;
  flex-wrap: wrap;
  height: 706px;
@@ -168,8 +172,8 @@ display: flex;
  perspective: 1000px;
 }
 
-.contsiner__ten-card {
-display: flex;
+.container__ten-card {
+ display: flex;
  justify-content: space-between;
  flex-wrap: wrap;
  height: 706px;
@@ -203,7 +207,7 @@ display: flex;
    
 }
 
-.looser__card {
+.loser__card {
     background: url(../image/card_finally.png);
     backface-visibility: hidden;
     height: 341px;
