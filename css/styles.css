@@ -154,30 +154,31 @@ body {
     background: none;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     height: 341px;
-    width: 702px;
+    width: 100%;
     margin: auto;
     perspective: 1000px;
 }
 
 .container__six-card {
  display: flex;
- justify-content: space-between;
- flex-wrap: wrap;
- height: 706px;
- width: 702px;
- margin: auto;
+ justify-content: center;
+    align-items: center;
+ height: 1000px;
+ width: 100%;
+ 
  perspective: 1000px;
 }
 
 .container__ten-card {
  display: flex;
  justify-content: space-between;
- flex-wrap: wrap;
+ position: relative;
+/* flex-wrap: wrap;*/
  height: 706px;
- width: 1186px;
+ width: 100%;
  margin: auto;
  perspective: 1000px;
 }
@@ -194,7 +195,7 @@ body {
     backface-visibility: hidden;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
 }
 
 .winner__card {

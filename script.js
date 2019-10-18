@@ -9,6 +9,12 @@ const buttonSimple = document.getElementById('item__simple');
 const buttonMiddle = document.getElementById('item__medium');
 const buttonHard = document.getElementById('item__hard');
 
+const difficultyLabels = [
+  document.getElementById('item__simple'),
+  document.getElementById('item__medium'),
+  document.getElementById('item__hard'),
+];
+
 const config = {
   classForThreeCards: 'container__three-card',
   classForSixCards: 'container__six-card',
@@ -24,40 +30,39 @@ for (let i = 0; i < buttonLevel.length; i++) {
     let flow = document.getElementsByClassName("checked");
     flow[0].className = flow[0].className.replace("checked", "");
     this.classList.add("checked");
-
   });
 }
+
+let numberOfCard;
 
 function getNumberOfCard() {
   if (buttonSimple.classList.contains("checked")) {
     playWrapper.className = config.classForThreeCards;
-    return 3;
+    return numberOfCard = 3;
   }
   else if (buttonMiddle.classList.contains("checked")) {
     playWrapper.className = config.classForSixCards;
-    return 6;
+    return numberOfCard = 6;
   }
-  else if (buttonHard.classList.contains("checked")) {
+  else {
     playWrapper.className = config.classForTenCards;
-    return 10;
+    return numberOfCard = 10;
   };
-}
-getNumberOfCard();
-const numberOfCard = getNumberOfCard();
+};
+
 
 function processOnGame() {
 getNumberOfCard();
-
 function creatureCards(number) {
 let randomCard = Math.floor(Math.random() * number);
 for (let i = 0; i < number; i++ ) {
+    console.log(number);
 let card = document.createElement('div');
 card.className = config.classNameForAllCards;
 document.body.append(playWrapper);
 playWrapper.append(card);
   };
 };
-
 creatureCards(numberOfCard);
 };
 
