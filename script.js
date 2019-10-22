@@ -19,7 +19,8 @@ const config = {
   classForThreeCards: 'container__three-card',
   classForSixCards: 'container__six-card',
   classForTenCards: 'container__ten-card',
-  classNameForAllCards: 'card__backside',
+  classNameForAllCards: 'card__container',
+  classNameForAllCardsHover: 'card__container_hover',
   classNameForWinnerCard: 'winner__card',
   classNameForLoserCard: 'loser__card',
   fieldForCard: 'card__container',
@@ -56,12 +57,29 @@ getNumberOfCard();
 function creatureCards(number) {
 let randomCard = Math.floor(Math.random() * number);
 for (let i = 0; i < number; i++ ) {
-    console.log(number);
+let winnerCard = document.createElement('div');
+let loserCard = document.createElement('div');
 let card = document.createElement('div');
-card.className = config.classNameForAllCards;
-document.body.append(playWrapper);
-playWrapper.append(card);
-  };
+
+  if (i === randomCard) {
+    card.className = config.classNameForAllCards;
+    // card.className.add = config.classNameForAllCardsHover;
+    document.body.append(playWrapper);
+    playWrapper.append(card);
+
+    winnerCard.className = 'winner__card';
+    card.append(winnerCard);
+  }
+  else {
+    card.className = config.classNameForAllCards;
+    // card.className.add = config.classNameForAllCardsHover;
+    document.body.append(playWrapper);
+    playWrapper.append(card);
+
+    loserCard.className = 'loser_card';
+    card.append(loserCard);
+  }
+}
 };
 creatureCards(numberOfCard);
 };
