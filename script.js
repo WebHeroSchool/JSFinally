@@ -9,6 +9,8 @@ const buttonSimple = document.getElementById('item__simple');
 const buttonMiddle = document.getElementById('item__medium');
 const buttonHard = document.getElementById('item__hard');
 
+
+
 const difficultyLabels = [
   document.getElementById('item__simple'),
   document.getElementById('item__medium'),
@@ -20,7 +22,7 @@ const config = {
   classForSixCards: 'container__six-card',
   classForTenCards: 'container__ten-card',
   classNameForAllCards: 'card__container',
-  classNameForAllCardsHover: 'card__container_hover',
+  classNameForAllCardsHover: 'card__container-hover',
   classNameForWinnerCard: 'winner__card',
   classNameForLoserCard: 'loser__card',
   fieldForCard: 'card__container',
@@ -35,6 +37,7 @@ for (let i = 0; i < buttonLevel.length; i++) {
 }
 
 let numberOfCard;
+let cardWasClicked = false;
 
 function getNumberOfCard() {
   if (buttonSimple.classList.contains("checked")) {
@@ -63,25 +66,39 @@ let card = document.createElement('div');
 
   if (i === randomCard) {
     card.className = config.classNameForAllCards;
-    // card.className.add = config.classNameForAllCardsHover;
+    card.className += " card__container-hover";
     document.body.append(playWrapper);
     playWrapper.append(card);
-
     winnerCard.className = 'winner__card';
     card.append(winnerCard);
   }
   else {
     card.className = config.classNameForAllCards;
-    // card.className.add = config.classNameForAllCardsHover;
+    card.className += " card__container-hover";
     document.body.append(playWrapper);
     playWrapper.append(card);
-
-    loserCard.className = 'loser_card';
+    loserCard.className = 'loser__card';
     card.append(loserCard);
   }
 }
 };
 creatureCards(numberOfCard);
+
+document.querySelectorAll('.card__container').forEach(card => {
+  card.addEventListener('click', () => {
+    if (cardWasClicked) {
+      playWrapper.style.display = 'none';
+      startWrapper.style.display = '';
+      cardWasClicked = false;
+    } else {
+      card.classList.add('card__click');
+      card.classList.remove('hover');
+      cardWasClicked = true;
+    };
+    return
+  });
+});
+
 };
 
 function startGame() {

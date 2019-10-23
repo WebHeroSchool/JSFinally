@@ -165,12 +165,12 @@ body {
     cursor: pointer;
 }
 
-
-.card__container:hover {
+.card__container-hover {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     transform: rotate(-3.08deg) translateY(-15px);
     transition: .4s ease;
 
+    backface-visibility: hidden;
 }
 
 .container__three-card {
@@ -196,7 +196,7 @@ body {
 }
 
 .container__ten-card {
-margin: 0 auto;
+ margin: 0 auto;
  display: flex;
  justify-content: center;
  flex-wrap: wrap;
@@ -214,6 +214,11 @@ margin: 0 auto;
     position: relative;
 } */
 
+
+.card__click {
+    transform: rotateY(180deg);
+}
+
 .winner__card {
     background: url(../image/card_with_bag.png);
     backface-visibility: hidden;
@@ -221,7 +226,7 @@ margin: 0 auto;
     width: 218px;
     position:absolute;
     transform: rotateY(180deg);
-   
+    /* cursor: pointer; */
 }
 
 .loser__card {
@@ -230,5 +235,6 @@ margin: 0 auto;
     height: 341px;
     width: 218px;
     position:absolute;
-    /* transform: rotateY(180deg); */
+    transform: rotateY(180deg);
+    /* cursor: pointer; */
 }
