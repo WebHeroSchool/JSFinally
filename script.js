@@ -8,8 +8,8 @@ const buttonStart = document.getElementById('button__startTheGame');
 const buttonSimple = document.getElementById('item__simple');
 const buttonMiddle = document.getElementById('item__medium');
 const buttonHard = document.getElementById('item__hard');
-
-
+let clickOnCard = false;
+let numberOfCard;
 
 const difficultyLabels = [
   document.getElementById('item__simple'),
@@ -36,9 +36,6 @@ for (let i = 0; i < buttonLevel.length; i++) {
   });
 }
 
-let numberOfCard;
-let cardWasClicked = false;
-
 function getNumberOfCard() {
   if (buttonSimple.classList.contains("checked")) {
     playWrapper.className = config.classForThreeCards;
@@ -63,18 +60,25 @@ for (let i = 0; i < number; i++ ) {
 let winnerCard = document.createElement('div');
 let loserCard = document.createElement('div');
 let card = document.createElement('div');
+card.className = config.classNameForAllCards;
+
+let cardHover = document.querySelectorAll('.card__container');
+for (let i = 0; i < cardHover.length; i++) {
+  cardHover[i].addEventListener("mouseover", function() {
+    this.classList.add("card__container-hover"); 
+      });
+      cardHover[i].addEventListener("mouseout", function() {
+       this.classList.remove("card__container-hover"); 
+      });
+}
 
   if (i === randomCard) {
-    card.className = config.classNameForAllCards;
-    card.className += " card__container-hover";
     document.body.append(playWrapper);
     playWrapper.append(card);
     winnerCard.className = 'winner__card';
     card.append(winnerCard);
   }
   else {
-    card.className = config.classNameForAllCards;
-    card.className += " card__container-hover";
     document.body.append(playWrapper);
     playWrapper.append(card);
     loserCard.className = 'loser__card';
@@ -86,16 +90,15 @@ creatureCards(numberOfCard);
 
 document.querySelectorAll('.card__container').forEach(card => {
   card.addEventListener('click', () => {
-    if (cardWasClicked) {
+    if (clickOnCard) {
       playWrapper.style.display = 'none';
       startWrapper.style.display = '';
-      cardWasClicked = false;
+      clickOnCard = false;
     } else {
       card.classList.add('card__click');
       card.classList.remove('hover');
-      cardWasClicked = true;
+      clickOnCard = true;
     };
-    return
   });
 });
 
@@ -106,6 +109,8 @@ function startGame() {
   startWrapper.style.display = 'none';
 }
 buttonStart.addEventListener('click', startGame);
+
+
 
 
 
