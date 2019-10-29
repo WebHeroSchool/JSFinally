@@ -143,27 +143,32 @@ body {
 
 /*Стили, которые добавляются через скрипт*/
 
-.display-none {
-    display: none;
+.play__wrapper {
+    display: flex;
 }
+
 
 .card__container {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     height: 341px;
     width: 218px;
-    margin: 10px;
-
-    border-radius: 7px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.9s;
-
-    background: url(../image/card3.png) no-repeat;
-    backface-visibility: hidden;
-    position: relative;
+    transition: transform 0.8s;
+    margin: 10px;
     cursor: pointer;
+    border-radius: 7px;
 }
+
+.card__backside {
+    background: url(../image/card3.png) no-repeat;
+    border-radius: 7px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+   }
 
 .card__container-hover {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
@@ -185,7 +190,6 @@ body {
 
 .container__six-card {
  margin: 0 auto;
-
  display: flex;
  justify-content: center;
  flex-wrap: wrap;
@@ -207,6 +211,7 @@ body {
 
 
 .card__click {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     transition: 1s ease;
 }
@@ -215,14 +220,20 @@ body {
     background: url(../image/card_with_bag.png);
     height: 341px;
     width: 218px;
+
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     cursor: pointer;
+
 }
 
 .loser__card {
     background: url(../image/card_finally.png);
     height: 341px;
     width: 218px;
+
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     cursor: pointer;
+    
 }

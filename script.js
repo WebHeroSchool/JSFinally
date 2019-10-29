@@ -26,6 +26,7 @@ const config = {
   classNameForWinnerCard: 'winner__card',
   classNameForLoserCard: 'loser__card',
   fieldForCard: 'card__container',
+  classForPlayWrapper: 'play__wrapper'
 }
 
 for (let i = 0; i < buttonLevel.length; i++) {
@@ -57,35 +58,39 @@ getNumberOfCard();
 function creatureCards(number) {
 let randomCard = Math.floor(Math.random() * number);
 for (let i = 0; i < number; i++ ) {
-let winnerCard = document.createElement('div');
-let loserCard = document.createElement('div');
-let card = document.createElement('div');
-card.className = config.classNameForAllCards;
+  let card = document.createElement('div');
+  let cardBackside = document.createElement('div');
+  let winnerCard = document.createElement('div');
+  let loserCard = document.createElement('div');
 
-let cardHover = document.querySelectorAll('.card__container');
-for (let i = 0; i < cardHover.length; i++) {
-  cardHover[i].addEventListener("mouseover", function() {
-    this.classList.add("card__container-hover"); 
-      });
-      cardHover[i].addEventListener("mouseout", function() {
-       this.classList.remove("card__container-hover"); 
-      });
-}
-
-  if (i === randomCard) {
-    document.body.append(playWrapper);
-    playWrapper.append(card);
-    winnerCard.className = 'winner__card';
-    card.append(winnerCard);
-  }
-  else {
-    document.body.append(playWrapper);
-    playWrapper.append(card);
-    loserCard.className = 'loser__card';
-    card.append(loserCard);
-  }
+if (i === randomCard) {
+  cardBackside.className ='card__backside';
+  card.className = "card__container";
+  card.append(cardBackside);
+  document.body.append(playWrapper);
+  playWrapper.append(card);
+  winnerCard.className = 'winner__card';
+  card.append(winnerCard); 
+ }
+ else {
+  cardBackside.className ='card__backside';
+  card.className = "card__container";
+  card.append(cardBackside);
+  document.body.append(playWrapper);
+  playWrapper.append(card);
+  loserCard.className = 'loser__card';
+  card.append(loserCard); 
+ }
+ 
+ card.addEventListener("mouseover", function() {
+  this.classList.add("card__container-hover"); 
+ });
+ card.addEventListener("mouseout", function() {
+    this.classList.remove("card__container-hover"); 
+ });
 }
 };
+
 creatureCards(numberOfCard);
 
 document.querySelectorAll('.card__container').forEach(card => {
@@ -96,7 +101,7 @@ document.querySelectorAll('.card__container').forEach(card => {
       clickOnCard = false;
     } else {
       card.classList.add('card__click');
-      card.classList.remove('hover');
+      card.classList.remove('card__container-hover');
       clickOnCard = true;
     };
   });
@@ -105,12 +110,13 @@ document.querySelectorAll('.card__container').forEach(card => {
 };
 
 function startGame() {
-  processOnGame();
+  playWrapper.innerHTML  = "";
+  playWrapper.style.display = 'flex';
+
   startWrapper.style.display = 'none';
+  processOnGame();
 }
 buttonStart.addEventListener('click', startGame);
-
-
 
 
 
