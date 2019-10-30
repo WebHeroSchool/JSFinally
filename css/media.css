@@ -110,18 +110,7 @@
      width: 108px;
      border-radius: 7px;
     }
-
-    .container__three-card {
-        height: 700px;
-    }
-
-    .container__six-card {
-        height: 700px;
-    }
-
-    .container__ten-card {
-        height: 700px;
-    }
+    
 }
 
 @media (max-width: 645px) {
@@ -168,10 +157,21 @@
     .card__backside,
     .loser__card,
     .winner__card {
-     background-size: 90px 171px;
+     background-size: 100px 171px;
      height: 169px;
      width: 98px;
      border-radius: 7px;
     }
+
+    .card__container,
+    .card__backside,
+    .loser__card,
+    .winner__card {
+     background-size: 175px 271px;
+     height: 269px;
+     width: 173px;
+     border-radius: 7px;
+
+    
 }
 
