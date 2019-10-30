@@ -162,16 +162,5 @@
      width: 98px;
      border-radius: 7px;
     }
-
-    .card__container,
-    .card__backside,
-    .loser__card,
-    .winner__card {
-     background-size: 175px 271px;
-     height: 269px;
-     width: 173px;
-     border-radius: 7px;
-
-    
 }
 
