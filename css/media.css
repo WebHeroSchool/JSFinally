@@ -162,5 +162,17 @@
      width: 98px;
      border-radius: 7px;
     }
+     html {
+        overflow-y: scroll;
+    }
+
+    .card__container {
+        margin: 8px;
+
+    }
+
+    .container__ten-card {
+        height: 900px;
+    }
 }
 
