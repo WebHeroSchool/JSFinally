@@ -1,18 +1,17 @@
+{margin: 0; padding: 0}
 html {
     overflow: hidden;
 }
-
-{margin: 0; padding: 0}
 
 body {
     position: relative;
     display: flex;
     align-content: center;
-    width: 100%;
-    height: 100%;
+    min-height: 950px;
+    max-width: 1300px;
     margin: auto;
     
-    background: #28704F url(../image/Background.png);
+    background: #28704F url(../image/Background.png) no-repeat;
     background-size: cover;
     
     font-family: Roboto;
@@ -145,6 +144,7 @@ body {
 
 .play__wrapper {
     display: flex;
+    height: 100%;
 }
 
 
@@ -164,8 +164,8 @@ body {
 .card__backside {
     background: url(../image/card3.png) no-repeat;
     border-radius: 7px;
-    height: 100%;
-    width: 100%;
+    height: 341px;
+    width: 218px;
     position: absolute;
     backface-visibility: hidden;
    }
@@ -174,38 +174,37 @@ body {
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     transform: rotate(-3.08deg) translateY(-15px);
     transition: .5s ease;
-
-    backface-visibility: hidden;
 }
 
 .container__three-card {
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    height: 341px;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: 700px;
     width: 100%;
-
-    perspective: 1000px;
+    perspective: 1000px; 
 }
 
 .container__six-card {
- margin: 0 auto;
  display: flex;
  justify-content: center;
- flex-wrap: wrap;
- height: 706px;
- width: 900px;
+ align-content: center;
+ flex-flow: row wrap;
+ height: 700px;
+ width: 100%;
  
  perspective: 1000px;
 }
 
 .container__ten-card {
- margin: 0 auto;
  display: flex;
  justify-content: center;
+ align-content: center;
+ align-items: center;
  flex-wrap: wrap;
- height: 706px;
- width: 1400px;
+ height: 700px;
+ width: 100%;
  perspective: 1000px;
 }
 
@@ -222,6 +221,7 @@ body {
     width: 218px;
 
     -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
     transform: rotateY(180deg);
     cursor: pointer;
 
@@ -233,6 +233,7 @@ body {
     width: 218px;
 
     -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
     transform: rotateY(180deg);
     cursor: pointer;
     
