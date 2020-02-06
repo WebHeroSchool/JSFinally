@@ -1,0 +1,260 @@
+{margin: 0; padding: 0}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
+html {
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    display: flex;
+    align-content: center;
+    min-height: 950px;
+    max-width: 1300px;
+    margin: auto;
+    
+    background: #28704F url(../image/Background.png) no-repeat;
+    background-size: cover;
+    
+    font-family: Roboto;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.head_title {
+    margin: 130px 0 0 100px;
+    color: white;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 57px;
+    line-height: 67px;    
+}
+
+.head_desk {
+    margin: 6px 0 0 105px;
+    color: white;
+    margin-top: 0;
+    padding: 0;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 22px;
+}
+
+.main__wrapper::before {
+    content: "";
+    background-image: url(../image/cards1.png);
+    position: absolute;
+    top: 430px;
+    right: 338px;
+    width: 288px;
+    height: 383px;
+    border-radius: 9px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 50px;
+    position: relative;
+}
+
+.main_menu {
+    margin: 40px 0 0 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_menu__item {
+    margin: 0 0 0 50px;
+
+    margin: 4px;
+    color: white;
+    width: 150px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+    
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.checked, .main_menu__item:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    position: relative;
+}
+
+.checked::before {
+    content: '';
+    background-color: #D62B2E;
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    width: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+}
+
+
+.main_button {
+    margin: 112px 0 0 100px;
+    
+    width: 352px;
+    height: 95px;
+    border-radius: 7px;
+    
+    background-color: #D62B2E;
+    color: white;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    
+    border: 0;
+    cursor: pointer;
+}
+
+.main_button:hover{
+    background-color: #A53029;
+}
+
+.main__wrapper::after {
+    content: "";
+    background-image: url(../image/cards2.png);
+    position: absolute;
+    top: 450px;
+    right: 158px;
+    width: 393px;
+    height: 411px;
+    z-index: 1;
+    border-radius: 9px;    
+}
+
+/*Ð¡Ñ‚Ð¸Ð»Ð¸, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÑŽÑ‚ÑÑ Ñ‡ÐµÑ€ÐµÐ· ÑÐºÑ€Ð¸Ð¿Ñ‚*/
+
+.play__wrapper {
+    display: flex;
+    height: 100%;
+}
+
+
+.card__container {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    height: 341px;
+    width: 218px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.card__backside {
+    background: url(../image/card3.png) no-repeat;
+    border-radius: 7px;
+    height: 341px;
+    width: 218px;
+    position: absolute;
+    backface-visibility: hidden;
+   }
+
+.card__container-hover {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transform: rotate(-3.08deg) translateY(-15px);
+    transition: .5s ease;
+}
+
+.container__three-card {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    height: 700px;
+<<<<<<< Updated upstream
+    width: 100%;
+    perspective: 1000px; 
+=======
+    width: 1100px;
+    perspective: 1000px; 
+    margin: auto;
+>>>>>>> Stashed changes
+}
+
+.container__six-card {
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ flex-flow: row wrap;
+ height: 700px;
+<<<<<<< Updated upstream
+ width: 100%;
+=======
+ width: 900px;
+>>>>>>> Stashed changes
+ 
+ perspective: 1000px;
+ margin: auto;
+}
+
+.container__ten-card {
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+<<<<<<< Updated upstream
+ height: 700px;
+=======
+ height: 900px;
+>>>>>>> Stashed changes
+ width: 100%;
+ perspective: 1000px;
+}
+
+
+.card__click {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transition: 1s ease;
+}
+
+.winner__card {
+    background: url(../image/card_with_bag.png);
+    height: 341px;
+    width: 218px;
+
+    -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    cursor: pointer;
+
+}
+
+.loser__card {
+    background: url(../image/card_finally.png);
+    height: 341px;
+    width: 218px;
+
+    -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    cursor: pointer;
+    
+}

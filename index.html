@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/fonts.css">
+   <link rel="stylesheet" href="css/media.css">
+   <meta name="viewport" content="width=device-width">
+    </head>
+<body>
+   <div class = "container" id="container">
+    <header class = "head">
+        <h1 class = "head_title">Выберите уровень сложности</h1>
+        <p class = "head_desk">Выберите сложность и игра начнется.Чем выше&nbspуровень&nbsp-&nbspтем&nbspбольше будет&nbspвыборка&nbspкарт.</p>
+    </header>
+    <div class = "main__wrapper" id="wrapper">
+    <main class = "main">
+        <nav class = "main_menu" id = "containerFromLevel">
+            <button type = "button" class="main_menu__item checked" id = "item__simple" value = "simple">Простой</button>
+            <button type = "button" class="main_menu__item" id = "item__medium" value = "medium">Средний</button>
+            <button type = "button" class="main_menu__item" id = "item__hard" value = "hard">Сложный</button>
+            </nav>
+        <button class="main_button" id = "button__startTheGame">Начать игру</button>
+    </main>
+    </div>
+    </div>
+    <div class="div__playGame" id = "divGame"></div>
+    <script src="script.js"></script>
+</body>
+</html>
